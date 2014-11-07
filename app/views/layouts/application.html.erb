@@ -19,7 +19,11 @@
       </ul>
       <h3 class="text-muted">Quitter (Week 9 Lab)</h3>
     </div>
-
+    <% for key in flash %>
+      <% if key == flash[:key] %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </div>
 </body>
